@@ -32,3 +32,11 @@
     border-radius: 50%;
     cursor: pointer;
 }
+
+.d-inline-block {
+    display: inline-block;
+}
+
+d-none {
+    display: none;
+}
