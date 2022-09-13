@@ -17,13 +17,13 @@
 <body>
     <div id="app">
         <div class="container">
-            <div class="slider-container">
+            <div class="slider-container" v-for="(pic, i) in pictures" v-if="displayActivePicture(i)">
                 <!-- contenitore carosello -->
-                <img src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="">
+                <img :class="display" :src="pic.url" alt="pic.title">
             </div>
             <div class="buttons-container">
-                <button><i class="bi bi-caret-left-fill"></i></button>
-                <button><i class="bi bi-caret-right-fill"></i></button>
+                <button @click="displayPreviousPic()"><i class="bi bi-caret-left-fill"></i></button>
+                <button @click="displayNextPic()"><i class="bi bi-caret-right-fill"></i></button>
             </div>
         </div>
     </div>

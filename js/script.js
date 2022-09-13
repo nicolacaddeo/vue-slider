@@ -31,7 +31,38 @@ const app = new Vue({
                 title: 'Colombia',
                 description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.'
             }
-        ]
+        ],
+        activeIndex: 0,
+        display: ''
+    },
+    methods: {
+        valueOfActiveIndex: function (i) {
+            this.activeIndex = i
+        },
+
+        displayActivePicture: function (i) {
+            if (this.activeIndex == i) {
+                display = 'd-inline-block'
+                return true
+            } else {
+                display = 'd-none'
+                return false
+            }
+        },
+        displayNextPic: function (i) {
+            if (this.activeIndex == this.pictures.length - 1) {
+                this.activeIndex = 0
+            } else {
+                this.activeIndex++
+            }
+        },
+        displayPreviousPic: function (i) {
+            if (this.activeIndex == 0) {
+                this.activeIndex = this.pictures.length - 1
+            } else {
+                this.activeIndex--
+            }
+        }
     }
 });
 
